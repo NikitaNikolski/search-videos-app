@@ -1,0 +1,25 @@
+<div class="video-item-container">
+    <div class="picture">
+        <img [src]="videoData.thumbnailUrl" alt="">
+    </div>
+    <div class="video-info">
+        <div class="title">{{ videoData.title }}</div>
+        <div class="description">{{ videoData.description }}</div>
+        <div class="statistics" *ngIf="videoData.statistics">
+            <div class="viewCount">
+                <i class="fa fa-eye"></i>
+                <span class="text">{{ videoData.statistics.viewCount }}</span>
+            </div>
+            <div class="like-statistics">
+                <div class="count like-count">
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                    <span class="text">{{ videoData.statistics.likeCount }}</span>
+                </div>
+                <div class="count dislike-count">
+                    <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                    <span class="text">{{ videoData.statistics.dislikeCount }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

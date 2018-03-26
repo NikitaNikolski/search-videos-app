@@ -1,0 +1,74 @@
+.video-player-container {
+    max-width: 1000px;
+
+    margin: 0 auto;
+    padding: 30px;
+
+    .playlist-options {
+        margin-bottom: 15px;
+
+        font-weight: 100;
+        text-transform: uppercase;
+        
+        cursor: pointer;
+    }
+
+    .embedded-iframe {
+        display: flex;
+        justify-content: center;
+    }
+
+    .video-info-container {
+        .video-info {
+            display: flex;
+            flex-direction: column;
+    
+            flex: 1;
+    
+            padding: 10px;
+    
+            .title {
+                flex-shrink: 0;
+    
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+    
+                font-weight: bold;
+            }
+    
+            .description {
+                flex: 1;
+    
+                font-size: 14px;
+                line-height: normal;
+    
+                overflow: hidden;
+            }
+    
+            .statistics {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+    
+                flex-shrink: 0;
+
+                margin: 10px 0;
+    
+                font-size: 14px;
+                font-weight: bold;
+
+                opacity: .5;
+    
+                .like-statistics {
+                    display: flex;
+                    flex-flow: row nowrap;
+    
+                    .like-count {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

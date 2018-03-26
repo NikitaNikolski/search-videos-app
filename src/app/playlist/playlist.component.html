@@ -1,0 +1,21 @@
+<div class="videos-container" *ngIf="videos.length">
+  <ul>
+    <li *ngFor="let video of videos">
+      <app-video-item [videoData]="video"></app-video-item>
+      <div class="overlapping">
+        <span class="play" (click)="playVideo(video)">
+          <i class="fa fa-play"></i>
+          <span class="text">Play video</span>
+        </span>
+        <span class="remove-from-playlist" *ngIf="video.inPlaylist" (click)="removeFromPlaylist(video)">
+          <i class="fa fa-minus"></i>
+          <span class="text">Remove from playlist</span>
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="no-data-message" *ngIf="!videos.length">
+  <h2>There is no videos in playlist yet</h2>
+</div>

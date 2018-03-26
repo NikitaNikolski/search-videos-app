@@ -1,0 +1,39 @@
+<div class="video-player-container">
+    <div class="playlist-options">
+        <span class="add-to-playlist" *ngIf="!videoDataItem.inPlaylist" (click)="addToPlaylist(videoDataItem)">
+            <i class="fa fa-plus"></i>
+            <span class="text">Add to playlist</span>
+        </span>
+        <span class="remove-from-playlist" *ngIf="videoDataItem.inPlaylist" (click)="removeFromPlaylist(videoDataItem)">
+            <i class="fa fa-minus"></i>
+            <span class="text">Remove from playlist</span>
+        </span>
+    </div>
+
+    <div class="embedded-iframe" #playerContainer>
+        <div id="player"></div>
+    </div>
+
+    <div class="video-info-container">
+        <div class="video-info" *ngIf="videoDataItem">
+            <div class="title">{{ videoDataItem.title }}</div>
+            <div class="statistics" *ngIf="videoDataItem.statistics">
+                <div class="viewCount">
+                    <i class="fa fa-eye"></i>
+                    <span class="text">{{ videoDataItem.statistics.viewCount }}</span>
+                </div>
+                <div class="like-statistics">
+                    <div class="count like-count">
+                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        <span class="text">{{ videoDataItem.statistics.likeCount }}</span>
+                    </div>
+                    <div class="count dislike-count">
+                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                        <span class="text">{{ videoDataItem.statistics.dislikeCount }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="description">{{ videoDataItem.description }}</div>
+        </div>
+    </div>
+</div>

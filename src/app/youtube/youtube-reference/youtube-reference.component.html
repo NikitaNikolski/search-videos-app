@@ -1,0 +1,36 @@
+<div class="paste-by-reference-container">
+    <div class="input-search-wrapper">
+        <input class="input" placeholder="Paste a link" type="text" [formControl]="searchField">
+        <span class="underline"></span>
+    </div>
+
+    <div class="invalid-url-message" *ngIf="!isURLValid">
+        <h2>Invalid URL. Check the correctness of this link and try again.</h2>
+    </div>
+
+    <div class="videos-container" *ngIf="video">
+        <ul>
+            <li>
+                <app-video-item [videoData]="video"></app-video-item>
+                <div class="overlapping">
+                    <span class="play" (click)="playVideo(video)">
+                        <i class="fa fa-play"></i>
+                        <span class="text">Play video</span>
+                    </span>
+                    <span class="add-to-playlist" *ngIf="!video.inPlaylist" (click)="addToPlaylist(video)">
+                        <i class="fa fa-plus"></i>
+                        <span class="text">Add to playlist</span>
+                    </span>
+                    <span class="remove-from-playlist" *ngIf="video.inPlaylist" (click)="removeFromPlaylist(video)">
+                        <i class="fa fa-minus"></i>
+                        <span class="text">Remove from playlist</span>
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="preloader" *ngIf="isLoading">
+        <div id="loader"></div>
+    </div>
+</div>

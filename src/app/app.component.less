@@ -1,0 +1,80 @@
+@header-height: 64px;
+
+:host {
+    & > * {
+        width: 100%;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        
+        height: @header-height;
+
+        padding: 12px 20px;
+
+        background-color: #1976d2;
+
+        color: white;
+
+        a.logo {
+            display: flex;
+            align-items: center;
+
+            color: white;
+            text-decoration: none;
+
+            cursor: pointer;
+
+            .logo-image {
+                width: 55px;
+                height: 55px;
+
+                background: url(../assets/images/logo.png) center no-repeat;
+                background-size: cover;
+            }
+
+            span.text {
+                font-size: 18px;
+                font-weight: 100;
+                text-transform: uppercase;
+            }
+        }
+
+        .nav {
+            .nav-item {
+                text-transform: uppercase;
+
+                .nav-link {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    main {
+        padding: @header-height 0 38px 0;
+
+        min-height: 100%;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        
+        p {
+            margin: 0;
+            padding: 10px 0;
+
+            font-size: 12px;
+
+            text-align: center;
+        }
+    }
+}

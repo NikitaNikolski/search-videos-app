@@ -1,0 +1,13 @@
+<div class="search-variants-container">
+    <h2>Choose the option of inserting a video</h2>
+
+    <ul class="search-types-list">
+        <li *ngFor="let searchVariant of searchVariants">
+            <input [attr.id]="searchVariant.variantKey" name="radio" type="radio" [checked]="searchVariant.variantKey === selectedSearchVariant"
+                (change)="selectSearchVariant(searchVariant.variantKey)">
+            <label [attr.for]="searchVariant.variantKey" class="radio-label">{{ searchVariant.variantName }}</label>
+        </li>
+    </ul>
+
+    <a class="btn btn-primary continue" [class.disabled]="!selectedSearchVariant" (click)="onContinue($event)">Continue</a>
+</div>
